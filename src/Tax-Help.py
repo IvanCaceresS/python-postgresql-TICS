@@ -8,6 +8,7 @@ customtkinter.set_default_color_theme("green")
 root = customtkinter.CTk()
 root.title("Tax-help")
 root.wm_maxsize()
+root.config(bg = "black")
 
 def Eliminar_tabla(anio):
     conn = psycopg2.connect(
@@ -292,11 +293,12 @@ def Agregar(admin):
 
         label_a = Label(ventana_nueva1, text = 'Año')
         label_a.grid(row=0, column=0)
-        label_a.config(fg="white", font=('Input Mono',8,'bold'), bg="#900C3F")
+        label_a.config(fg="black", font=('Input Mono',8,'bold'), bg="#900C3F")
         
 
         entryAño = Entry(ventana_nueva1)
         entryAño.grid(row=1,column=0)
+        entryAño.config(bg='#5DADE2')
         
 
         label_desde1 = Label(ventana_nueva1, text = 'DESDE')
@@ -425,7 +427,6 @@ def Agregar(admin):
 
         porcreten = Entry(ventana_nueva1)
         porcreten.grid(row=1,column=8)
-        porcreten.config(bg='#F8C471')
        
         mensaje = StringVar()
         label = Label(ventana_nueva1, textvariable = mensaje)
@@ -650,7 +651,7 @@ def calcular(enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembr
     
 
 #Canvas
-canvas = Canvas(root, height=600, width=700)
+canvas = Canvas(root, height=650, width=700)
 canvas.pack()
 canvas['bg'] = '#900C3F'
 
@@ -662,7 +663,7 @@ root['bg'] = '#900C3F'
 
 texto_variable = StringVar()
 label = Label(frame, textvariable = texto_variable)
-label.grid(row=22, column=1)
+label.grid(row=20, column=2)
 label.config(bg="#900C3F",fg="white",font=('Skyhook Mono',8,'bold'))
 
 retencion_enero_variable = DoubleVar()
@@ -728,12 +729,12 @@ label.config(bg="#900C3F",fg="white",font=('Skyhook Mono',8,'bold'))
 retenido = DoubleVar()
 label = Label(frame, textvariable = retenido)
 label.grid(row=17, column=3)
-label.config(bg="#900C3F",fg="white",font=('Skyhook Mono',8,'bold'))
+label.config(bg="#900C3F",fg="black",font=('Skyhook Mono',8,'bold'))
 
 text_variable2 = DoubleVar()
 label = Label(frame, textvariable = text_variable2)
 label.grid(row=17, column=2)
-label.config(bg="#900C3F",fg="white",font=('Skyhook Mono',8,'bold'))
+label.config(bg="#900C3F",fg="black",font=('Skyhook Mono',8,'bold'))
 
 
 #img = Tk.PhotoImage(file="a.jpg")
@@ -894,5 +895,14 @@ admintext = StringVar()
 label = Label(frame, textvariable = admintext)
 label.grid(row=22, column=4)
 label.config(bg="#900C3F",fg="white",font=('Input Mono',10,'bold'))
+
+#label_titulo = Label(frame, text = "Aplicación dirigida para personas independientes acogidas al 30% de \ngastos presuntos y que reciben pagos mediante boletas honorario")
+#label_titulo.place(x=0,y=0)
+#label_titulo.config(bg="#900C3F",fg="black",font=('Ubuntu Mono',16,))
+
+whatever_you_do = "Aplicación dirigida para personas independientes acogidas al 30% de \ngastos presuntos y que reciben pagos mediante boletas honorario"
+msg = Message(frame, text = whatever_you_do)
+msg.config(fg="white", bg='#2C3E50', font=('times', 15, 'italic'))
+msg.place(x=20,y=360)
 
 root.mainloop()
