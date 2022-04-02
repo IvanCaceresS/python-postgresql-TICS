@@ -8,10 +8,141 @@ root = customtkinter.CTk()
 root.title("Tax-help")
 root.wm_maxsize()
 
-def Agregar():
-    ventana_nueva1 = Toplevel()
-    ventana_nueva1.geometry("400x50")
-    ventana_nueva1.title("Agregar tabla")
+def Agregar(admin):
+    if (admin!="admin"):
+        admintext.set("Contraseña incorrecta.")
+        return
+    else:
+        admintext.set("")
+        ventana_nueva1 = Toplevel()
+        ventana_nueva1.geometry("400x400")
+        ventana_nueva1.title("Agregar tabla")
+
+        label = Label(ventana_nueva1, text = 'Año')
+        label.grid(row=0, column=0)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=1,column=0)
+
+        label = Label(ventana_nueva1, text = 'DESDE')
+        label.grid(row=0, column=3)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=1,column=3)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=2,column=3)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=3,column=3)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=4,column=3)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=5,column=3)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=6,column=3)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=7,column=3)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=8,column=3)
+
+        label = Label(ventana_nueva1, text = 'HASTA')
+        label.grid(row=0, column=4)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=1,column=4)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=2,column=4)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=3,column=4)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=4,column=4)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=5,column=4)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=6,column=4)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=7,column=4)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=8,column=4)
+
+        label = Label(ventana_nueva1, text = 'FACTOR')
+        label.grid(row=0, column=5)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=1,column=5)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=2,column=5)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=3,column=5)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=4,column=5)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=5,column=5)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=6,column=5)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=7,column=5)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=8,column=5)
+
+        label = Label(ventana_nueva1, text = 'CANTIDAD A REBAJAR')
+        label.grid(row=0, column=6)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=1,column=6)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=2,column=6)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=3,column=6)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=4,column=6)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=5,column=6)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=6,column=6)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=7,column=6)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=8,column=6)
+
+        label = Label(ventana_nueva1, text = 'GASTOS PRESUNTOS')
+        label.grid(row=0, column=7)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=1,column=7)
+
+        label = Label(ventana_nueva1, text = 'PORCENTAJE DE RETENCION')
+        label.grid(row=0, column=8)
+
+        entryAño = Entry(ventana_nueva1)
+        entryAño.grid(row=1,column=8)
 
 
 def actualizar_datos(suma,row):
@@ -198,8 +329,6 @@ def calcular(enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembr
     else:
         texto_variable.set('')
 
-    
-    actualizar(suma)
     actualizar_datos(suma,row)
     actualizar_retencion_meses(enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre,row)
 
@@ -212,7 +341,7 @@ def calcular(enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembr
     conn.close()
 
 #Canvas
-canvas = Canvas(root, height=550, width=550)
+canvas = Canvas(root, height=500, width=500)
 canvas.pack()
 
 frame = Frame()
@@ -220,7 +349,7 @@ frame.place(relx=0.1, rely=0.1, relwidth=0.8, relheight=0.8)
 
 texto_variable = StringVar()
 label = Label(frame, textvariable = texto_variable)
-label.grid(row=16, column=1)
+label.grid(row=14, column=1)
 
 retencion_enero_variable = DoubleVar()
 label = Label(frame, textvariable = retencion_enero_variable)
@@ -395,15 +524,19 @@ label = Label(frame, textvariable = devolucion)
 label.grid(row=18, column=0)
 
 button=customtkinter.CTkButton(frame, text="CALCULAR", command=lambda:calcular(entry_ener.get(), entry_feb.get(), entry_mar.get(), entry_abr.get(), entry_may.get(), entry_jun.get() , entry_jul.get(), entry_ago.get(), entry_sep.get(), entry_oct.get(), entry_nov.get(), entry_dic.get(), entry_anio.get()))
-button.grid(relx=0.5, rely=0.5)
+button.grid(row=16, column=1)
 
 label_admin = Label(frame, text = 'Admin')
-label_admin.grid(row=18, column=4)
+label_admin.grid(row=14, column=2)
 
 admin = Entry(frame)
-admin.grid(row=19,column=4)
+admin.grid(row=15,column=2)
 
 button=customtkinter.CTkButton(frame, text="Agregar tabla", command=lambda:Agregar(admin.get()))
-button.grid(relx=0.5, rely=0.5)
+button.grid(row=16, column=2)
+
+admintext = StringVar()
+label = Label(frame, textvariable = admintext)
+label.grid(row=17, column=2)
 
 root.mainloop()
