@@ -289,7 +289,7 @@ def Agregar(admin):
         ventana_nueva1.geometry("910x400")
         ventana_nueva1.title("Agregar tabla")
         ventana_nueva1['bg'] = '#900C3F'
-        
+
         label_a = Label(ventana_nueva1, text = 'Año')
         label_a.grid(row=0, column=0)
         label_a.config(fg="white", font=('Input Mono',8,'bold'), bg="#900C3F")
@@ -418,14 +418,15 @@ def Agregar(admin):
 
         gastosp = Entry(ventana_nueva1)
         gastosp.grid(row=1,column=7)
-
+        
         label_pr = Label(ventana_nueva1, text = 'PORCENTAJE DE RETENCION')
         label_pr.grid(row=0, column=8)
         label_pr.config(fg="white", font=('Input Mono',8,'bold'), bg="#900C3F")
 
         porcreten = Entry(ventana_nueva1)
         porcreten.grid(row=1,column=8)
-
+        porcreten.config(bg='#F8C471')
+       
         mensaje = StringVar()
         label = Label(ventana_nueva1, textvariable = mensaje)
         label.grid(row=10, column=5)
