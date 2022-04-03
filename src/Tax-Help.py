@@ -617,9 +617,57 @@ def calcular(enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembr
         return
 
     #SE VERIFICA QUE LOS MONTOS SEAN NO NEGATIVOS
-
-    if float(enero)<0 or float(febrero)<0 or float(marzo)<0 or float(abril)<0 or float(mayo)<0 or float(junio)<0 or float(julio)<0 or float(agosto)<0 or float(septiembre)<0 or float(octubre)<0 or float(noviembre)<0 or float(diciembre)<0 :
+    error_positivo = 0
+    if float(enero)<0:
         texto_variable.set('Los montos deben ser positivos')
+        label_enero.config(fg="red")
+        error_positivo=1
+    if float(febrero)<0:
+        texto_variable.set('Los montos deben ser positivos')
+        label_febrero.config(fg="red")
+        error_positivo=1
+    if float(marzo)<0:
+        texto_variable.set('Los montos deben ser positivos')
+        label_marzo.config(fg="red")
+        error_positivo=1
+    if float(abril)<0:
+        texto_variable.set('Los montos deben ser positivos')
+        label_abril.config(fg="red")
+        error_positivo=1
+    if float(mayo)<0:
+        texto_variable.set('Los montos deben ser positivos')
+        label_mayo.config(fg="red")
+        error_positivo=1
+    if float(junio)<0:
+        texto_variable.set('Los montos deben ser positivos')
+        label_junio.config(fg="red")
+        error_positivo=1
+    if float(julio)<0:
+        texto_variable.set('Los montos deben ser positivos')
+        label_julio.config(fg="red")
+        error_positivo=1
+    if float(agosto)<0:
+        texto_variable.set('Los montos deben ser positivos')
+        label_agosto.config(fg="red")
+        error_positivo=1
+    if float(septiembre)<0:
+        texto_variable.set('Los montos deben ser positivos')
+        label_septiembre.config(fg="red")
+        error_positivo=1
+    if float(octubre)<0:
+        texto_variable.set('Los montos deben ser positivos')
+        label_octubre.config(fg="red")
+        error_positivo=1
+    if float(noviembre)<0:
+        texto_variable.set('Los montos deben ser positivos')
+        label_noviembre.config(fg="red")
+        error_positivo=1
+    if float(diciembre)<0:
+        texto_variable.set('Los montos deben ser positivos')
+        label_diciembre.config(fg="red")
+        error_positivo=1
+    
+    if(error_positivo == 1):
         return
         
     conn = psycopg2.connect(
